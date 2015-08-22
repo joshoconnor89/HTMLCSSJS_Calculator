@@ -1,0 +1,35 @@
+<script type="text/javascript">
+var screenNums = '';
+
+function finalCalc(){
+  var equation = document.getElementById('answers').value
+  document.getElementById('answers').value = eval(equation);
+  screenNums = '';
+}
+
+function clearMe(){
+		 document.getElementById('answers').value = 0;
+	  screenNums = '';
+}
+
+
+function calcme(num){
+
+//alert(typeof(num));
+screenNums += num 
+//alert('you clicked ' + num);
+document.getElementById('answers').value = screenNums
+}
+</script>
+
+
+
+
+<table style="width:190px">
+<tr><td colspan="2"><input type = "text" id = "answers" disabled="disabled"></td>
+<td onclick="clearMe();">C</td><td onclick="calcme('/');">/</td></tr>
+<tr><td onclick="calcme('7');">7</td><td onclick="calcme('8');">8</td><td onclick="calcme('9');">9</td><td onclick="calcme('-');">-</td><tr>
+<tr><td onclick="calcme('4');">4</td><td onclick="calcme('5');">5</td><td onclick="calcme('6');">6</td><td onclick="calcme('+');">+</td><tr>
+<tr><td onclick="calcme('1');">1</td><td onclick="calcme('2');">2</td><td onclick="calcme('3 ');">3</td><td onclick="calcme('*');">*</td><tr>
+<tr><td colspan="3"></td><td onclick="finalCalc();">=</td><tr>
+</table>
